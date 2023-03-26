@@ -18,12 +18,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link {{ $var == 'pegawai' ? 'active' : '' }}" href="{{route('pegawai.index')}}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fas fa-users text-warning text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Pegawai</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ $var == 'jabatan' ? 'active' : '' }}" href="{{ route('jabatan.index') }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-single-02 text-success text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Jabatan</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -35,6 +44,7 @@
                     <span class="nav-link-text ms-1">Category Post</span>
                 </a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link " href="#">
                     <div

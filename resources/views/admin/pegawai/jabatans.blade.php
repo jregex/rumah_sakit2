@@ -27,21 +27,22 @@
                     @endif
                     <div class="card-header d-flex justify-content-between">
                         <h5>{{ $title }}</h5>
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">Add data</button>
+                        <button data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-success">Add
+                            Jabatan</button>
                     </div>
                     <div class="card-body px-2 pt-0 pb-2">
                         <div class="table-responsive pb-0">
                             <table class="table table-striped">
                                 <thead class="text-center">
                                     <th>No</th>
-                                    <th>Category</th>
+                                    <th>Jabatan</th>
                                     <th>#</th>
                                 </thead>
                                 <tbody>
-                                    @forelse ($categories as $item)
+                                    @forelse ($jabatans as $item)
                                         <tr class="text-center">
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->category }}</td>
+                                            <td>{{ $item->jabatan }}</td>
                                             <td class="align-middle">
                                                 <button
                                                     class="btn btn-link text-secondary mb-0 rounded-circle bg-light text-dark"
@@ -52,7 +53,7 @@
                                                 <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
                                                     <li>
                                                         <form
-                                                            action="{{ route('categories.delete', ['category' => $item->id]) }}"
+                                                            action="{{ route('jabatan.delete', ['jabatan' => $item->id]) }}"
                                                             method="post">
                                                             @method('delete')
                                                             @csrf
@@ -86,7 +87,7 @@
         aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content bg-gradient-primary">
-                <form action="{{ route('categories.store') }}" method="post">
+                <form action="{{ route('jabatan.store') }}" method="post">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title text-white" id="addModalLabel">{{ $title }}</h5>
@@ -95,9 +96,9 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label class="text-white" for="category">Category</label>
-                            <input type="text" class="form-control form-control-alternative" name="category"
-                                id="category" placeholder="Input category">
+                            <label class="text-white" for="jabatan">Jabatan</label>
+                            <input type="text" class="form-control form-control-alternative" name="jabatan"
+                                id="jabatan" placeholder="Input jabatan">
                         </div>
 
                     </div>
