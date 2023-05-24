@@ -6,8 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::group(['prefix' => 'admin:2000', 'middleware' => 'user-auth'], function () {
+Route::group(['prefix' => '/', 'middleware' => 'user-auth'], function () {
     // dashboard
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     // profile
@@ -31,5 +30,5 @@ Route::group(['prefix' => 'admin:2000', 'middleware' => 'user-auth'], function (
     Route::delete('/jabatans/{jabatan}', [PegawaiController::class, 'jabatan_delete'])->name('jabatan.delete');
     Route::get('/pegawais', [PegawaiController::class, 'index'])->name('pegawai.index');
 });
-Route::get('/admin:2000', [UserController::class, 'login'])->name('login');
-Route::post('/admin:2000', [UserController::class, 'login_check'])->name('login-check');
+Route::get('/', [UserController::class, 'login'])->name('login');
+Route::post('/', [UserController::class, 'login_check'])->name('login-check');

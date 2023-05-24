@@ -51,8 +51,7 @@ class UserController extends Controller
     {
         $data = [
             'title' => 'My Profile',
-            'var' => 'profile',
-            'users' => User::where('id', $request->session()->get('admin-account.id'))->with('role')->first(),
+            'var' => 'profile', 'users' => User::where('id', $request->session()->get('admin-account.id'))->with('role')->first(),
             'roles' => Role::get()
         ];
         return view('admin.users.profile', $data);
@@ -211,5 +210,9 @@ class UserController extends Controller
         } else {
             return redirect()->route('profile_')->with('success', 'profile was successfully update');
         }
+    }
+    public function list_users(){
+        $users = User::get();
+        return response()->json(['data'=>$users,'message'=>'ok','status'=>200]);
     }
 }
