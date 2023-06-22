@@ -18,7 +18,7 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="{{ asset('assets/admin/assets') }}/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="{{ asset('assets/admin/assets') }}/css/argon-dashboard.min.css" rel="stylesheet" />
+    <link id="pagestyle" href="{{ asset('assets/admin/assets') }}/css/style2.min.css" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="text-center">
                                             <button type="submit"
-                                                class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Log in</button>
+                                                class="btn btn-lg btn-dark btn-lg w-100 mt-4 mb-0">Log in</button>
                                         </div>
                                     </form>
                                 </div>
