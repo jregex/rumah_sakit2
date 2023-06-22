@@ -17,4 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/users',[App\Http\Controllers\UserController::class,'list_users']);
+Route::get('/pegawai-api',[App\Http\Controllers\PegawaiController::class,'pegawai_api']);
+Route::get('/api-edit-jabatan/{id}',[App\Http\Controllers\PegawaiController::class,'editJabatan']);
+Route::get('/api-edit-jenis/{id}',[App\Http\Controllers\AdminController::class,'editJenis']);
+
+// post
+Route::get('/posts',[App\Http\Controllers\Api\ApiController::class,'list_post']);

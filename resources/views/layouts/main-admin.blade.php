@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="{{ asset('assets/admin/assets') }}/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/icon.png">
+    <link rel="icon" type="image/png" href="{{ asset('assets/admin/assets') }}/img/icon.png">
     <title>
         {{ $title ?? 'Home' }} | DPUPR Bantaeng
     </title>
@@ -65,9 +65,9 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <div class="container-fluid py-5">
+        <div class="container-fluid py-4">
             @yield('content-admin')
-            <footer class="footer pt-3 mt-5">
+            <footer class="footer pt-4 mt-2">
                 <div class="container-fluid">
                     <div class="row align-items-center justify-content-lg-between">
                         <div class="col-lg-12 mb-lg-0 mb-4">

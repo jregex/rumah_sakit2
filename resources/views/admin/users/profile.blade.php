@@ -3,7 +3,7 @@
 @section('content-admin')
     <div class="container-fluid py-4">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card card-profile">
                     <img src="{{ asset('assets/admin') }}/assets/img/carousel-3.jpg" alt="Image placeholder"
                         class="card-img-top">

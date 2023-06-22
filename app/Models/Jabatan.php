@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jabatan extends Model
 {
     use HasFactory;
+    protected $table='jabatans';
     protected $guarded = ['id'];
     public $timestamps = false;
     public function pegawai()

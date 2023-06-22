@@ -9,4 +9,9 @@ class Aturan extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function category_aturan()
+    {
+        return $this->belongsTo(CategoryAturan::class);
+    }
 }

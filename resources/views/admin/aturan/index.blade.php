@@ -27,25 +27,26 @@
                     @endif
                     <div class="card-header d-flex justify-content-between">
                         <h5>{{ $title }}</h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-success">Add
-                            Jabatan</button>
+                        <button data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-success">Add Rule</button>
                     </div>
                     <div class="card-body px-2 pt-0 pb-2">
-                        <div class="table-responsive pb-0" id="table-jabatan">
+                        <div class="table-responsive pb-0" id="table-aturan">
                             <div class="px-2">
                                 <input class="search form-control" placeholder="Search" />
                             </div>
                             <table class="table table-striped">
                                 <thead class="text-center">
                                     <th>No</th>
-                                    <th>Jabatan</th>
+                                    <th>Aturan</th>
+                                    <th>Jenis aturan</th>
                                     <th>#</th>
                                 </thead>
                                 <tbody class="list">
-                                    @forelse ($jabatans as $item)
+                                    @forelse ($aturans as $item)
                                         <tr class="text-center">
                                             <td class="number">{{ $loop->iteration }}</td>
-                                            <td class="jabatan">{{ $item->jabatan }}</td>
+                                            <td class="aturan">{{ $item->aturan }}</td>
+                                            <td class="jenis_aturan">{{$item->category_aturan->jenis_aturan}}</td>
                                             <td class="align-middle">
                                                 <button
                                                     class="btn btn-link text-secondary mb-0 rounded-circle bg-light text-dark"
@@ -56,7 +57,7 @@
                                                 <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
                                                     <li>
                                                         <form
-                                                            action="{{ route('jabatan.delete', ['jabatan' => $item->id]) }}"
+                                                            action="{{ route('aturan.delete', ['aturan' => $item->id]) }}"
                                                             method="post">
                                                             @method('delete')
                                                             @csrf
@@ -65,7 +66,7 @@
                                                                 Delete</button>
                                                         </form>
                                                     </li>
-                                                    <li><button class="dropdown-item text-white open-modal" value="{{$item->id}}"><i
+                                                    <li><a class="dropdown-item text-white" href="{{ route('aturan.edit', ['aturan'=>$item->id]) }}"><i
                                                                 class="fa fa-edit text-warning"></i> Edit</a></li>
                                                     </li>
                                                 </ul>
@@ -73,7 +74,7 @@
                                         </tr>
                                     @empty
                                         <tr class="text-center">
-                                            <td colspan="3">Empty Data</td>
+                                            <td colspan="4">Empty Data</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -88,20 +89,34 @@
     <!-- Modal -->
     <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="addModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content bg-gradient-primary">
-                <form action="{{ route('jabatan.store') }}" method="post">
+                <form action="{{ route('aturan.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title text-white" id="addModalLabel">{{ $title }}</h5>
+                        <h5 class="modal-title text-white" id="addModalLabel">Add aturan</h5>
 
                     </div>
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label class="text-white" for="jabatan">Jabatan</label>
-                            <input type="text" class="form-control form-control-alternative" name="jabatan"
-                                id="jabatan" placeholder="Input jabatan">
+                            <label for="jenis_aturan" class="text-white">Jenis aturan</label>
+                            <select name="jenis_id" id="jenis_id" class="form-control">
+                                <option selected>--Pilih jenis aturan--</option>
+                                @foreach ($jenis_aturan as $item)
+                                    <option value="{{$item->id}}">{{$item->jenis_aturan}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="text-white" for="aturan">Aturan</label>
+                            <input type="text" class="form-control form-control-alternative" id="aturan" name="aturan" placeholder="Input aturan">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white" for="file_aturan">File aturan</label>
+                            <input type="file" class="form-control form-control-alternative" id="file_aturan" name="file_aturan" placeholder="Input file aturan">
+                            <span class="fst-italic text-white form-text">Jenis file pdf,docx,xlxs,xls,csv</span>
                         </div>
 
                     </div>
@@ -114,70 +129,15 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-gradient-primary">
-                <form action="{{ route('jabatan.update') }}" method="post">
-                    @method('patch')
-                    @csrf
-                    <div class="modal-header">
-                        <h5 class="modal-title text-white" id="editModalLabel">Edit Jabatan</h5>
 
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="form-group">
-                            <label class="text-white" for="jabatan">Jabatan</label>
-                            <input type="text" class="form-control form-control-alternative" name="jabatan"
-                                id="jabatan-edit" placeholder="Input jabatan">
-                            <input type="hidden" id="jabatan-id" name="jabatan_id">
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="reset" id="resetData" class="btn btn-dark text-white"
-                            data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-light" id="btn-save">Save</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('datatables-js')
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script>
-    let options = {
-        valueNames: [ 'number', 'jabatan' ],
-    };
-
-    const jabatanList = new List('table-jabatan', options);
-
-    //edit modal trigger
-    let tombolEdit = document.querySelectorAll('.open-modal');
-    for(let i = 0; i < tombolEdit.length; i++) {
-        tombolEdit[i].addEventListener('click',function(){
-            let modal = new bootstrap.Modal('#editModal');
-            const url = "/api/api-edit-jabatan";
-            const tour_id= this.value;
-            fetch(`${url}/${tour_id}`).then(res=>res.json()).then(res=>{
-                modal.show();
-                document.querySelector('#jabatan-edit').value=res.data.jabatan;
-                document.querySelector('#jabatan-id').value=res.data.id;
-            });
-            // $.get(url + '/' + tour_id, function (data) {
-            //     //success data
-            //     console.log(data);
-            //     $('#tour_id').val(data.id);
-            //     $('#name').val(data.name);
-            //     $('#details').val(data.details);
-            //     $('#btn-save').val("update");
-            // })
-        });
-    }
+    const aturanList = new List('table-aturan', {
+        valueNames: [ 'number','aturan','jenis_aturan' ],
+    });
 
 </script>
 @endsection
