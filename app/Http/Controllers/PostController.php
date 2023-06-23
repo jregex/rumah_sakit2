@@ -53,12 +53,17 @@ class PostController extends Controller
             });
             $img->save(Storage::path('public/posts/' . $namafile));
         }
+        if($request->sumber == ""){
+            $sumber = "-";
+        }else{
+            $sumber=$request->sumber;
+        }
         $save=Post::create([
             'title'=>$request->title,
             'slug'=>$slug,
             'penulis'=>$request->session()->get('admin-account.name'),
             'category_id'=>$request->category_id,
-            'sumber'=>$request->sumber,
+            'sumber'=>$sumber,
             'body'=>$request->body,
             'image'=>$namafile
         ]);
