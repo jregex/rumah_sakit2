@@ -31,17 +31,17 @@
                             Jabatan</button>
                     </div>
                     <div class="card-body px-2 pt-0 pb-2">
-                        <div class="table-responsive pb-0" id="table-jabatan">
-                            <div class="px-2">
+                        <div class="table-responsive pb-0">
+                            {{-- <div class="px-2">
                                 <input class="search form-control" placeholder="Search" />
-                            </div>
-                            <table class="table table-striped">
+                            </div> --}}
+                            <table class="table table-striped" border="1" id="table-jabatan">
                                 <thead class="text-center">
                                     <th>No</th>
                                     <th>Jabatan</th>
                                     <th>#</th>
                                 </thead>
-                                <tbody class="list">
+                                <tbody>
                                     @forelse ($jabatans as $item)
                                         <tr class="text-center">
                                             <td class="number">{{ $loop->iteration }}</td>
@@ -79,6 +79,14 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    <div class="card-footer">
+                        <button
+                            onclick="x.DownloadCSV()"
+                            class="mt-2 ms-3 border-0 btn btn-success shadow-none"
+                        >
+                            Download CSV
+                        </button>
                     </div>
                 </div>
             </div>
@@ -148,13 +156,27 @@
 @endsection
 
 @section('datatables-js')
-<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+{{-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script> --}}
+{{-- <script src="{{ asset('assets/admin/assets/js/plugins/rdata/index.js') }}"></script> --}}
+<script src="https://cdn.jsdelivr.net/gh/Rakhmadi/RdataTB@master/dist/index.js"></script>
 <script>
-    let options = {
-        valueNames: [ 'number', 'jabatan' ],
-    };
+    // let options = {
+    //     valueNames: [ 'number', 'jabatan' ],
+    // };
 
-    const jabatanList = new List('table-jabatan', options);
+    // const jabatanList = new List('table-jabatan', options);
+    let x = new RdataTB('table-jabatan',{
+		//RenderJSON:[], // Convert Json to Table html
+		ShowSearch:true, // show search field,
+		ShowSelect:true, // show show select,
+		ShowPaginate:true, // show paginate ,
+		SelectionNumber:[5,10,20,50,100], //Change Option in Select
+		ShowHighlight:false, // show Highlight if search
+	    fixedTable:true, // fixed table
+        sortAnimate:false, // show animated if sorted
+		ShowTfoot:false,
+		ExcludeColumnExport:["#"]
+	});
 
     //edit modal trigger
     let tombolEdit = document.querySelectorAll('.open-modal');
