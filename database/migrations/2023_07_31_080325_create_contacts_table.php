@@ -13,9 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_aturans', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_aturan');
+            $table->string('name');
+            $table->string('subjek')->nullable();
+            $table->string('number',22);
+            $table->foreignId('post_id');
+            $table->foreignId('category_id');
+            $table->enum('status',['pending','active'])->default('pending');
+            $table->text('body')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_aturans');
+        Schema::dropIfExists('contacts');
     }
 };

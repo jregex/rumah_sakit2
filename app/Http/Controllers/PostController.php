@@ -34,7 +34,8 @@ class PostController extends Controller
     {
         $request->validate([
             'title'=>'required',
-            'body'=>'required',
+            'desc'=>'required',
+            'price'=>'required',
             'image'=>'image|mimes:jpg,png,bmp,jpeg,webp',
             'category_id'=>'required'
         ]);
@@ -53,18 +54,13 @@ class PostController extends Controller
             });
             $img->save(Storage::path('public/posts/' . $namafile));
         }
-        if($request->sumber == ""){
-            $sumber = "-";
-        }else{
-            $sumber=$request->sumber;
-        }
         $save=Post::create([
             'title'=>$request->title,
             'slug'=>$slug,
-            'penulis'=>$request->session()->get('admin-account.name'),
+            'price'=>$request->price,
             'category_id'=>$request->category_id,
-            'sumber'=>$sumber,
-            'body'=>$request->body,
+            'desc'=>$request->body,
+            'status'=>'active',
             'image'=>$namafile
         ]);
         if($save){
@@ -103,7 +99,8 @@ class PostController extends Controller
     {
         $request->validate([
             'title'=>'required',
-            'body'=>'required',
+            'desc'=>'required',
+            'price'=>'required',
             'image'=>'image|mimes:jpg,png,bmp,jpeg,webp'
         ]);
         $file = $request->file('image');
@@ -125,10 +122,10 @@ class PostController extends Controller
         $update=Post::where('id',$post->id)->update([
             'title'=>$request->title,
             'slug'=>$slug,
-            'penulis'=>$request->session()->get('admin-account.name'),
+            'price'=>$request->price,
             'category_id'=>$request->category_id,
-            'sumber'=>$request->sumber,
-            'body'=>$request->body,
+            'desc'=>$request->body,
+            'status'=>'active',
             'image'=>$namafile
         ]);
         if($update){

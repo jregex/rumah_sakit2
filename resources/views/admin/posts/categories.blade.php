@@ -85,17 +85,17 @@
     <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-gradient-primary">
+            <div class="modal-content bg-gradient-warning">
                 <form action="{{ route('categories.store') }}" method="post">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title text-white" id="addModalLabel">{{ $title }}</h5>
+                        <h5 class="modal-title" id="addModalLabel">{{ $title }}</h5>
 
                     </div>
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label class="text-white" for="category">Category</label>
+                            <label for="category">Category</label>
                             <input type="text" class="form-control form-control-alternative" name="category"
                                 id="category" placeholder="Input category">
                         </div>

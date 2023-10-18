@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/icon.png">
-    <link rel="icon" type="image/png" href="{{ asset('assets/admin/assets') }}/img/icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/logo1.ico">
+    <link rel="icon" type="image/png" href="{{ asset('assets/admin/assets') }}/img/logo1.ico">
     <title>
-        {{ $title ?? 'Home' }} | DPUPR Bantaeng
+        {{ $title ?? 'Home' }} | Sembilan 9 Media
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -76,10 +76,11 @@
                         </div>
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-                            <div class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
-                                style="background-image: url('/assets/admin/assets/img/logo2.png');
-          background-size: 50%;background-repeat:no-repeat;background-position:center;background-color:#0C134F">
+                            <div class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden bg-light"
+                            style="background-image: url('/assets/admin/assets/img/logo1.png');
+                            background-size: 50%;background-repeat:no-repeat;background-position:center;background-color:#fcfcfc">
                                 {{-- <span class="mask bg-primary opacity-6"></span> --}}
+
                             </div>
                         </div>
                     </div>

@@ -47,12 +47,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="sumber">Sumber</label>
-                            <input type="text" class="form-control" name="sumber" id="sumber" placeholder="Input sumber" value="{{$posts->sumber}}" disabled>
+                            <label for="price">Harga</label>
+                            <input type="text" class="form-control" name="price" id="price" placeholder="Input price" value="{{$posts->price}}" disabled>
                         </div>
                         <div class="form-group mb-4">
-                            <label for="body">Body</label>
-                            <textarea name="body" id="body" class="form-control" rows="20" cols="10" disabled>{!! $posts->body !!}</textarea>
+                            <label for="desc">Deskripsi</label>
+                            <textarea name="desc" id="desc" class="form-control" rows="20" cols="10" disabled>{!! $posts->desc !!}</textarea>
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-3">

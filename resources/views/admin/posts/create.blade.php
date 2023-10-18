@@ -30,7 +30,7 @@
                         <h5>{{ $title }}</h5>
                     </div>
                     <div class="card-body px-2 pt-0 pb-2 p-4">
-                       <form action="{{ route('posts.store') }}" class="px-4" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('posts.store') }}" class="px-4" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="title">Title</label>
@@ -46,12 +46,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="sumber">Sumber</label>
-                            <input type="text" class="form-control" name="sumber" id="sumber" placeholder="Input sumber">
+                            <label for="price">Harga</label>
+                            <input type="text" class="form-control" name="price" id="price" placeholder="Input price">
                         </div>
                         <div class="form-group mb-4">
-                            <label for="body">Body</label>
-                            <textarea name="body" id="body" class="form-control"></textarea>
+                            <label for="desc">Deskripsi</label>
+                            <textarea name="desc" id="desc" class="form-control"></textarea>
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-3">
@@ -82,7 +82,7 @@
     <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
     <script src="{{ asset('assets/admin/assets/js/custom-js/custom-plugins.js') }}"></script>
     <script>
-        CKEDITOR.replace('body',{
+        CKEDITOR.replace('desc',{
             toolbar: [
             { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
             { name: 'clipboard', groups: [ 'clipboard', 'undo' ]},

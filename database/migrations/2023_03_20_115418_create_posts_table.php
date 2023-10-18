@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug', 256);
-            $table->string('penulis');
-            $table->string('sumber', 256);
-            $table->text('body');
-            $table->string('image');
+            $table->text('desc')->nullable();
+            $table->integer('price');
+            $table->string('image')->nullable();
+            $table->enum('status', ['Pending', 'Active']);
             $table->timestamps();
         });
     }

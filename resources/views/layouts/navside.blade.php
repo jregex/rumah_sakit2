@@ -18,30 +18,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('pegawai.*') ? 'active' : '' }}" href="{{route('pegawai.index')}}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-users text-warning text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Pegawai</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('jabatan.*') ? 'active' : '' }}" href="{{ route('jabatan.index') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-single-02 text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Jabatan</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link {{ Request::routeIs('categories.*') ? 'active' : '' }}" href="{{ route('categories.index') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Kategori berita</span>
+                    <span class="nav-link-text ms-1">Kategori Post</span>
                 </a>
             </li>
 
@@ -51,25 +33,7 @@
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Berita</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('jenis.*') ? 'active' : '' }}" href="{{ route('jenis.index') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Jenis aturan</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('aturan.*') ? 'active' : '' }}" href="{{ route('aturan.index') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Aturan</span>
+                    <span class="nav-link-text ms-1">Post</span>
                 </a>
             </li>
 
