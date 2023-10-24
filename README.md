@@ -9,9 +9,10 @@
 
 ## Cara menggunakan
 ```bash
-git clone https://github.com/jregex/dpupr_bantaeng.git
 
-cd admin_sembilan9
+git clone https://github.com/jregex/adminsmartsolution.git
+
+cd adminsmartsolution
 
 composer install
 
