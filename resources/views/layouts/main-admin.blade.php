@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/logo1.ico">
-    <link rel="icon" type="image/png" href="{{ asset('assets/admin/assets') }}/img/logo1.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/logo_smart.ico">
+    <link rel="icon" type="image/icon-x" href="{{ asset('assets/admin/assets') }}/img/logo_smart.ico">
     <title>
-        {{ $title ?? 'Home' }} | Sembilan 9 Media
+        {{ $title ?? 'Home' }} | Smart 99 Solution
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -25,8 +25,8 @@
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
-    <div class="min-height-300 bg-gradient-warning position-absolute w-100"></div>
-    @include('layouts.navside')
+    <div class="min-height-300 bg-dark position-absolute w-100"></div>
+    <x-navside />
     <main class="main-content position-relative border-radius-lg ">
         <!-- Navbar -->
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"

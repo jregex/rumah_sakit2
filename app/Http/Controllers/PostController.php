@@ -14,8 +14,7 @@ class PostController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Daftar Post',
-            'var' => 'post',
+            'title' => 'Daftar Produk',
             'posts' => Post::with('category')->latest()->get()
         ];
         return view('admin.posts.index', $data);
@@ -24,8 +23,7 @@ class PostController extends Controller
     public function create()
     {
         $data = [
-            'title' => 'Tambah Post',
-            'var' => 'post',
+            'title' => 'Tambah Produk',
             'categories' => Category::get()
         ];
         return view('admin.posts.create', $data);
@@ -59,8 +57,8 @@ class PostController extends Controller
             'slug'=>$slug,
             'price'=>$request->price,
             'category_id'=>$request->category_id,
-            'desc'=>$request->body,
-            'status'=>'active',
+            'desc'=>$request->desc,
+            'status'=>'Pending',
             'image'=>$namafile
         ]);
         if($save){
@@ -74,8 +72,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $data = [
-            'title' => 'Detail Post',
-            'var' => 'post',
+            'title' => 'Detail Produk',
             'posts' => $post->load('category'),
             'categories'=>Category::get()
         ];
@@ -86,8 +83,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $data = [
-            'title' => 'Detail Post',
-            'var' => 'post',
+            'title' => 'Detail Produk',
             'post' => $post,
             'categories' => Category::all()
         ];
@@ -124,7 +120,7 @@ class PostController extends Controller
             'slug'=>$slug,
             'price'=>$request->price,
             'category_id'=>$request->category_id,
-            'desc'=>$request->body,
+            'desc'=>$request->desc,
             'status'=>'active',
             'image'=>$namafile
         ]);
@@ -152,7 +148,6 @@ class PostController extends Controller
     {
         $data = [
             'title' => 'List Categories',
-            'var' => 'category',
             'categories' => Category::get()
         ];
         return view('admin.posts.categories', $data);

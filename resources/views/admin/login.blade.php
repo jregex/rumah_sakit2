@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/logo1.ico">
-    <link rel="icon" type="image/png" href="{{ asset('assets/admin/assets') }}/img/logo1.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/logo_smart.ico">
+    <link rel="icon" type="image/icon-x" href="{{ asset('assets/admin/assets') }}/img/logo_smart.ico">
     <title>
         {{ $title ?? 'Home' }} | Sembilan 9 Media
     </title>
@@ -77,7 +77,7 @@
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
                             <div class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden bg-light"
-                            style="background-image: url('/assets/admin/assets/img/logo1.png');
+                                style="background-image: url('/assets/admin/assets/img/logo1.png');
                             background-size: 50%;background-repeat:no-repeat;background-position:center;background-color:#fcfcfc">
                                 {{-- <span class="mask bg-primary opacity-6"></span> --}}
 

@@ -208,7 +208,7 @@ class UserController extends Controller
             $sesi['role_id'] = $request->role_id;
             return redirect()->route('profile_')->with('success', 'profile was successfully update');
         } else {
-            return redirect()->route('profile_')->with('success', 'profile was successfully update');
+            return redirect()->route('profile_')->with('failed', 'profile was successfully update');
         }
     }
     public function list_users(){

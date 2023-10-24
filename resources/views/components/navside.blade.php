@@ -2,7 +2,8 @@
     id="sidenav-main" data-color="primary">
     <div class="sidenav-header text-center">
         <a class="navbar-brand m-0" href="{{ route('dashboard') }}">
-            <img src="{{ asset('assets/admin/assets/img') }}/logo2.png" alt="">
+            <img src="{{ asset('assets/admin/assets/img') }}/logo_smart.png" class="bg-dark img-fluid" width="48"
+                height="48" alt="logo Brand">
         </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -18,22 +19,23 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('categories.*') ? 'active' : '' }}" href="{{ route('categories.index') }}">
+                <a class="nav-link {{ Request::routeIs('categories.*') ? 'active' : '' }}"
+                    href="{{ route('categories.index') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Kategori Post</span>
+                    <span class="nav-link-text ms-1">Kategori Produk</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{Request::routeIs('posts.*') ? 'active':''}}" href="{{ route('posts.index') }}">
+                <a class="nav-link {{ Request::routeIs('posts.*') ? 'active' : '' }}" href="{{ route('posts.index') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Post</span>
+                    <span class="nav-link-text ms-1">Produk</span>
                 </a>
             </li>
 
@@ -52,12 +54,23 @@
             </li>
             @if (session()->get('admin-account.role_id') == 1)
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::routeIs('users.*') ? 'active' : '' }}" href="{{ route('users.index') }}">
+                    <a class="nav-link {{ Request::routeIs('users.*') ? 'active' : '' }}"
+                        href="{{ route('users.index') }}">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="fas fa-users text-dark text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Users</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::routeIs('settings.*') ? 'active' : '' }}"
+                        href="{{ route('settings.index') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-cog text-dark text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Pengaturan</span>
                     </a>
                 </li>
             @endif
