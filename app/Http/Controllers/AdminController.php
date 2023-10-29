@@ -12,14 +12,23 @@ class AdminController extends Controller
 {
     public function index()
     {
+        $jml=Post::get()->mapWithKeys(function($post,$key){
+            return [
+                'last_insert'=>$post->created_at->diffForHumans(),
+                'jml'=>$post->where('status','Active')->count()
+            ];
+        });
+        if(isset($jml)){
+            $hasil = [
+                'last_insert'=>0,
+                'jml'=>0
+            ];
+        }else{
+            $hasil=$jml;
+        }
         $data = [
             'title' => 'Dashboard',
-            'jml_post'=>Post::get()->mapWithKeys(function($post,$key){
-                return [
-                    'last_insert'=>$post->created_at->diffForHumans(),
-                    'jml'=>$post->where('status','Active')->count()
-                ];
-            })
+            'jml_post'=>$hasil
         ];
         // return $data;
         return view('admin.dashboard', $data);

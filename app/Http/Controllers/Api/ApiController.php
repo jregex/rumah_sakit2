@@ -15,7 +15,7 @@ class ApiController extends BaseController
             return [
                 'title' => $post->title,
                 'desc' => $post->desc,
-		'price'=>number_format($post->price),
+		        'price'=>number_format($post->price),
                 'image' => asset('storage/posts/' . $post->image),
                 'created' => \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('d F Y')
             ];
