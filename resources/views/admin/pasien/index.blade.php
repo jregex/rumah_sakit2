@@ -97,7 +97,7 @@
 <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="addModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content bg-gradient-primary">
+        <div class="modal-content bg-gradient-success">
             <form action="{{ route('pasien.store') }}" method="post" id="addForm">
                 @csrf
                 <div class="modal-header">

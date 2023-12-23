@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow-primary text-center">
+                        <div class="icon icon-shape bg-dark text-center">
                             <i class="ni ni-badge text-lg opacity-10" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow-primary text-center">
+                        <div class="icon icon-shape bg-dark text-center">
                             <i class="ni ni-building text-lg opacity-10" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="col-4 text-end">
-                        <div class="icon icon-shape bg-gradient-primary shadow-primary text-center">
+                        <div class="icon icon-shape bg-dark text-center">
                             <i class="ni ni-calendar-grid-58 text-lg opacity-10" aria-hidden="true"></i>
                         </div>
                     </div>

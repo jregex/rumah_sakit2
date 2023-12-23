@@ -24,13 +24,13 @@
 					</div>
 				</div>
 				<div class="card-body pt-0">
-					<div class="mt-2">
-						<div class="h6 text-center font-weight-300">
-							<ul class="list-group">
-								<li class="list-group-item">{{ $users->name }}</li>
-								<li class="list-group-item">{{ $users->email }}</li>
-							</ul>
+					<div class="mt-2 text-center">
+						<div class="h4 text-center font-weight-300">
+                            {{ $users->name }}
 						</div>
+                        <div class="h6">
+                            {{ $users->email }}
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -80,7 +80,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-12">
 									<div class="form-group">
 										<label for="name" class="form-control-label">Name</label>
 										<input class="form-control" id="name" name="name" disabled type="text"

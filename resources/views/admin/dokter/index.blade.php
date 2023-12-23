@@ -95,7 +95,7 @@
 <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 	aria-labelledby="addModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-lg">
-		<div class="modal-content bg-gradient-primary">
+		<div class="modal-content bg-gradient-success">
 			<form action="{{ route('dokter.store') }}" method="post" id="addForm">
 				@csrf
 				<div class="modal-header">
@@ -113,8 +113,8 @@
 						<label class="text-white" for="spesialis">Spesialis</label>
 						<select class="form-control form-control-alternative" id="spesialis" name="spesialis" required>
 							<option selected>--pilih spesialis--</option>
-							<option value="gigi">Gigi</option>
-							<option value="kulit">Kulit</option>
+							<option value="psikiater">Psikiater</option>
+							<option value="jantung">Jantung</option>
 						</select>
 					</div>
 					<div class="form-group">

@@ -10,9 +10,9 @@
 ## Cara menggunakan
 ```bash
 
-git clone https://github.com/jregex/rumah_sakit.git
+git clone https://github.com/jregex/rumah_sakit2.git
 
-cd rumah_sakit
+cd rumah_sakit2
 
 composer install
 

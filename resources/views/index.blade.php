@@ -31,7 +31,7 @@
                             <div class="card card-plain">
                                 <div class="card-header pb-0 text-start">
                                     <h4 class="font-weight-bolder">Log In</h4>
-                                    <p class="mb-0">Enter your Username or Email and password to log in</p>
+                                    <p class="mb-0">Silahkan masukkan username atau email dan password</p>
                                 </div>
                                 <div class="card-body">
                                     @if (session()->has('success'))
@@ -67,7 +67,7 @@
                                             <label class="form-check-label" for="showPass">Show Password</label>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-lg btn-dark btn-lg w-100 mt-4 mb-0">Log
+                                            <button type="submit" class="btn btn-lg btn-success w-100 mt-4 mb-0">Log
                                                 in</button>
                                         </div>
                                     </form>
@@ -76,11 +76,10 @@
                         </div>
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-                            <div class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden bg-light"
-                                style="background-image: url('/assets/admin/assets/img/logo1.png');
-                            background-size: 50%;background-repeat:no-repeat;background-position:center;background-color:#fcfcfc">
-                                {{-- <span class="mask bg-primary opacity-6"></span> --}}
-
+                            <div class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden bg-dark"
+                                style="background-image: url('/assets/admin/assets/img/hospital.png');
+                            background-size: 25%;background-repeat:no-repeat;background-position:center">
+                                <span class="mask bg-gradient-success opacity-4"></span>
                             </div>
                         </div>
                     </div>

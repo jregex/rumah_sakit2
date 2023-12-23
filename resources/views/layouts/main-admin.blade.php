@@ -25,7 +25,7 @@
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
-    <div class="min-height-300 bg-dark position-absolute w-100"></div>
+    <div class="min-height-300 bg-gradient-success position-absolute w-100"></div>
     <x-navside />
     <main class="main-content position-relative border-radius-lg ">
         <!-- Navbar -->
@@ -44,18 +44,18 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown pe-2 ps-3 d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton1"
+                            <a href="javascript:;" class="nav-link text-dark p-0" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-cog cursor-pointer me-1"></i>
                                 <span class="d-sm-inline d-none">Profile</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4 mb-3"
                                 aria-labelledby="dropdownMenuButton1">
-                                <li class="mb-2"><a class="dropdown-item dropdown-item border-radius-md"
+                                <li class="mb-2"><a class="dropdown-item dropdown-item  border-radius-md"
                                         href="{{ route('profile_') }}">Profile</a></li>
                                 <li class="mb-2">
                                     <form action="{{ route('logout_') }}" method="post">@csrf<button type="submit"
-                                            class="dropdown-item dropdown-item border-radius-md">Logout</button></form>
+                                            class="dropdown-item dropdown-item border-radius-md ">Logout</button></form>
                                 </li>
                             </ul>
                         </li>
@@ -76,9 +76,8 @@
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="#" class="font-weight-bold" target="_blank">221006</a>
-                                for a better web.
+                                made with <i class="fas fa-fire"></i> by
+                                <a href="#" class="font-weight-bold" target="_blank">221002</a>
                             </div>
                         </div>
                     </div>

@@ -32,7 +32,7 @@
 					<div class="card-header pb-0 d-flex align-items-center">
 						<h6>List {{ $title }}</h6>
                         <div class="ms-auto">
-                            <a href="{{ route('jadwal.pdf') }}" class="btn btn-primary btn-sm">Cetak</a>
+                            <a href="{{ route('jadwal.pdf') }}" class="btn btn-dark btn-sm">Cetak</a>
 						<button class="btn btn-success btn-sm" data-bs-toggle="modal"
 							data-bs-target="#addModal">Tambah</button>
                         </div>
@@ -108,7 +108,7 @@
 <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 	aria-labelledby="addModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-lg">
-		<div class="modal-content bg-gradient-primary">
+		<div class="modal-content bg-gradient-success">
 			<form action="{{ route('jadwal.store') }}" method="post" id="addForm">
 				@csrf
 				<div class="modal-header">
