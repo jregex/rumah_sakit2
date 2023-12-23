@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
@@ -13,14 +12,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('ruangans', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug', 256);
-            $table->text('desc')->nullable();
-            $table->integer('price');
-            $table->string('image')->nullable();
-            $table->enum('status', ['Pending', 'Active']);
+            $table->string('no_ruangan', 10);
+            $table->string('tipe_ruangan', 100);
+            $table->integer('ketersediaan');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('ruangans');
     }
 };

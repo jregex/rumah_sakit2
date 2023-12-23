@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/logo_smart.ico">
-    <link rel="icon" type="image/icon-x" href="{{ asset('assets/admin/assets') }}/img/logo_smart.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/hospital.ico">
+    <link rel="icon" type="image/icon-x" href="{{ asset('assets/admin/assets') }}/img/hospital.ico">
     <title>
-        {{ $title ?? 'Home' }} | Sembilan 9 Media
+        {{ $title ?? 'Home' }} | Pelayanan Rumah Sakit
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -35,21 +35,21 @@
                                 </div>
                                 <div class="card-body">
                                     @if (session()->has('success'))
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                            <span class="alert-text text-white">{{ session()->get('success') }}</span>
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <span class="alert-text text-white">{{ session()->get('success') }}</span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
                                     @elseif (session()->has('failed'))
-                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                            <span class="alert-text text-white">{{ session()->get('failed') }}</span>
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <span class="alert-text text-white">{{ session()->get('failed') }}</span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
                                     @endif
                                     <form role="form" method="post" action="{{ route('login-check') }}">
                                         @csrf
@@ -67,8 +67,8 @@
                                             <label class="form-check-label" for="showPass">Show Password</label>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit"
-                                                class="btn btn-lg btn-dark btn-lg w-100 mt-4 mb-0">Log in</button>
+                                            <button type="submit" class="btn btn-lg btn-dark btn-lg w-100 mt-4 mb-0">Log
+                                                in</button>
                                         </div>
                                     </form>
                                 </div>

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('username', 30);
             $table->foreignId('role_id');
             $table->string('email')->unique();
+            $table->string('jabatan',50);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->default(Hash::make('ganser123'));
             $table->string('image')->default('default.webp');

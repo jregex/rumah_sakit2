@@ -25,7 +25,7 @@ class UserController extends Controller
         $data = [
             'title' => 'Login',
         ];
-        return view('admin.login', $data);
+        return view('index', $data);
     }
 
     public function login_check(Request $request)
@@ -139,6 +139,9 @@ class UserController extends Controller
         ]);
         $file = $request->file('image');
         if ($file) {
+            if (!Storage::exists('/public/userprofile')) {
+                Storage::makeDirectory('public/userprofile', 0775, true);
+            }
             $namafile =  md5(date('d-m-s', strtotime(now()))) . '.' . $file->getClientOriginalExtension();
             $img = Image::make($file->path());
             $img->resize(200, null, function ($constraint) {
@@ -197,22 +200,21 @@ class UserController extends Controller
         $update = User::where('id', $user->id)->update([
             'name' => $request->input('name'),
             'username' => $request->input('username'),
-            'email' => $request->input('email'),
-            'role_id' => $request->input('role_id')
+            'email' => $request->input('email')
         ]);
         if ($update) {
             $sesi = $request->session()->get('admin-account');
             $sesi['name'] = $request->name;
             $sesi['username'] = $request->username;
             $sesi['email'] = $request->email;
-            $sesi['role_id'] = $request->role_id;
             return redirect()->route('profile_')->with('success', 'profile was successfully update');
         } else {
             return redirect()->route('profile_')->with('failed', 'profile was successfully update');
         }
     }
-    public function list_users(){
+    public function list_users()
+    {
         $users = User::get();
-        return response()->json(['data'=>$users,'message'=>'ok','status'=>200]);
+        return response()->json(['data' => $users,'message' => 'ok','status' => 200]);
     }
 }

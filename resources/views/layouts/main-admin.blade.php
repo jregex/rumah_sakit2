@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/logo_smart.ico">
-    <link rel="icon" type="image/icon-x" href="{{ asset('assets/admin/assets') }}/img/logo_smart.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/assets') }}/img/hospital.ico">
+    <link rel="icon" type="image/icon-x" href="{{ asset('assets/admin/assets') }}/img/hospital.ico">
     <title>
-        {{ $title ?? 'Home' }} | Smart 99 Solution
+        {{ $title ?? 'Home' }} | Pelayanan Rumah Sakit
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -77,7 +77,7 @@
                                     document.write(new Date().getFullYear())
                                 </script>,
                                 made with <i class="fa fa-heart"></i> by
-                                <a href="#" class="font-weight-bold" target="_blank">Regex</a>
+                                <a href="#" class="font-weight-bold" target="_blank">221006</a>
                                 for a better web.
                             </div>
                         </div>
